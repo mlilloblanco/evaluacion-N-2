@@ -13,6 +13,7 @@ public class Lavadora extends Electrodomestico {
 
 	public final static float CARGA_DEFECTO = 5;
 	public final static float DELTA_PRECIO_CARGA_30KG = 50;
+	public final static float LIMITE_CARGA = 30;
 
 	private float carga;
 
@@ -50,7 +51,7 @@ public class Lavadora extends Electrodomestico {
 
 		float precioFinal = super.precioFinal();
 
-		if (this.carga > 30) {
+		if (this.carga > LIMITE_CARGA) {
 			precioFinal += DELTA_PRECIO_CARGA_30KG;
 		}
 		return precioFinal;
