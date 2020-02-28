@@ -22,6 +22,7 @@ public class Electrodomestico {
 	public final static String[] COLORES_DISPONIBLES = { "blanco", "negro", "rojo", "azul", "gris" };
 	public final static float[] DELTA_PRECIO_CONSUMO_ENERGETICO = { 100, 80, 60, 50, 30, 10 };
 	public final static float[] DELTA_PRECIO_PESO = { 10, 50, 80, 100 };
+	public final static float[] LIMITES_PESO = { 0, 19, 20, 49, 50, 79, 80 };
 
 	private float precioBase;
 	private String color;
@@ -125,13 +126,13 @@ public class Electrodomestico {
 
 		float precioFinal = this.precioBase;
 
-		if (this.peso >= 0 && this.peso <= 19) {
+		if (this.peso >= LIMITES_PESO[0] && this.peso <= LIMITES_PESO[1]) {
 			precioFinal += DELTA_PRECIO_PESO[0];
-		} else if (this.peso >= 20 && this.peso <= 49)
+		} else if (this.peso >= LIMITES_PESO[2] && this.peso <= LIMITES_PESO[3])
 			precioFinal += DELTA_PRECIO_PESO[1];
-		else if (this.peso >= 50 && this.peso <= 79)
+		else if (this.peso >= LIMITES_PESO[4] && this.peso <= LIMITES_PESO[5])
 			precioFinal += DELTA_PRECIO_PESO[2];
-		else if (this.peso >= 80)
+		else if (this.peso >= LIMITES_PESO[6])
 			precioFinal += DELTA_PRECIO_PESO[3];
 		else
 			System.out.println("ingresaste un numero negativo, se te mantendra automaticamente el precio base");

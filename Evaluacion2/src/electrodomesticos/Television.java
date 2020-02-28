@@ -15,6 +15,7 @@ public class Television extends Electrodomestico {
 	public final static boolean SINTONIZADOR_TDT_DEFECTO = false;
 	public final static float PORCENTAJE_AUMENTO_PRECIO_RESOLUCION = 0.3f;
 	public final static float DELTA_PRECIO_SINTONIZADOR_TDT = 50f;
+	public final static float LIMITE_RESOLUCION = 40f;
 
 	private float resolucion;
 	private boolean sintonizadorTDT;
@@ -66,7 +67,7 @@ public class Television extends Electrodomestico {
 
 		float precioFinal = super.precioFinal();
 
-		if (this.resolucion > 40) {
+		if (this.resolucion > LIMITE_RESOLUCION) {
 			precioFinal += precioFinal * PORCENTAJE_AUMENTO_PRECIO_RESOLUCION;
 		}
 

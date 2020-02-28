@@ -19,13 +19,13 @@ public class Lavadora extends Electrodomestico {
 	public Lavadora() {
 
 		super();
-		this.carga = 5;
+		this.carga = CARGA_DEFECTO;
 	}
 
 	public Lavadora(float precioBase, float peso) {
 
 		super(precioBase, peso);
-		this.carga = 5;
+		this.carga = CARGA_DEFECTO;
 	}
 
 	public Lavadora(float carga) {
