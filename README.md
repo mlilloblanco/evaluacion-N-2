@@ -1,2 +1,7 @@
 # evaluacion-N-2
-ejercicio en Java de herencia con una clase padre electrodomestico y sus hijas
+Java Herencia y Polimorfismo. Programación Orientada a Objetos (POO)
+
+La problematica de este ejercicio es generar una superclase llamada electrodoméstico con sus respectivos atributos, constructores, y métodos, los cuales hereda a la clase Lavadora y a la clase Televisión. El ejercicio se basa en calcular el precio final del producto dependiendo ya sea de su eficiencia energética y/o de su peso, el cual si es televisor tambien depende de si tiene sintonizador TDT y/o de su resolución, en cambio para la lavadora depende de su carga. Finalmente se pide generar un ejecutable que genere un array de 10 electrodomesticos, se les asigne valores y y calcule su precio final.
+
+La solución consiste en utilizar la herencia para heredar a las clases hijas todos los atributos y métodos de la clase padre, además para resolver el problema que surge al variar el método precio final en cada clase hija respecto de la clase padre, se decide utilizar un @Override para poder anular el método de la clase padre, y generar uno nuevo que de hecho llama al de la clase padre a través de super y le agrega las caracteristicas especificas de las clases hijas.
+Finalmente se genera el ejecutable con el array de electrodomesticos los cuales son generados uno a uno para poder utilizar cada constructor generado y finalmente se calculan la suma de los precios finales segun categoria utilizando instanceOf.
